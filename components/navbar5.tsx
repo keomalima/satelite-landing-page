@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -145,9 +145,14 @@ const Navbar5 = ({ className }: Navbar5Props) => {
             <Button variant="outline" className="hidden border-white text-white hover:bg-white/10">
               Connexion
             </Button>
-            <Button className="bg-[#e1b129] font-bold text-[#293647] hover:bg-[#d29c20]">
+            <a
+              href="#contact"
+              className={buttonVariants({
+                className: "bg-[#e1b129] font-bold text-[#293647] hover:bg-[#d29c20]",
+              })}
+            >
               Demander une démo
-            </Button>
+            </a>
           </div>
           <Sheet>
             <SheetTrigger className="lg:hidden" render={<Button variant="outline" size="icon" className="border-white text-white hover:bg-white/10" />}><MenuIcon className="h-4 w-4" /></SheetTrigger>
@@ -207,7 +212,14 @@ const Navbar5 = ({ className }: Navbar5Props) => {
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
                   <Button variant="outline" className="border-white text-white hover:bg-white/10">Connexion</Button>
-                  <Button className="bg-[#e1b129] font-bold text-[#293647] hover:bg-[#d29c20]">Demander une démo</Button>
+                  <a
+                    href="#contact"
+                    className={buttonVariants({
+                      className: "bg-[#e1b129] font-bold text-[#293647] hover:bg-[#d29c20]",
+                    })}
+                  >
+                    Demander une démo
+                  </a>
                 </div>
               </div>
             </SheetContent>

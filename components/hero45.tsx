@@ -1,6 +1,6 @@
 "use client";
 
-import { Braces, Cpu, Keyboard } from "lucide-react";
+import { Building2, FileText, SquareStack } from "lucide-react";
 import React, { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -36,43 +36,43 @@ interface Hero45Props extends HeroFeatureSliderProps {}
 type Props = Partial<Hero45Props>;
 
 const defaultProps: Hero45Props = {
-  badge: "Platform",
-  heading: "Shadcn UI Components built for the modern stack.",
+  badge: "Fonctionnalités",
+  heading: "Tout ce dont vos équipes ont besoin.",
   features: [
     {
-      title: "Composable patterns",
+      title: "DAT digitale & conforme",
       description:
-        "Ship faster with structured sections and consistent spacing.",
-      icon: Braces,
+        "Générez vos Déclarations d'Accident du Travail en conformité CARSAT/URSSAF.",
+      icon: FileText,
     },
     {
-      title: "Design tokens",
+      title: "Suivi des incidents en temps reel",
       description:
-        "Theme and scale colors, type, and radii from a single coherent system.",
-      icon: Cpu,
+        "Centralisez chaque accident du travail et maladie professionnelle avec un historique complet.",
+      icon: SquareStack,
     },
     {
-      title: "Accessible defaults",
+      title: "Espace établissement unifié",
       description:
-        "Keyboard and screen-reader friendly building blocks out of the box.",
-      icon: Keyboard,
+        "Centralisez en un seul endroit les informations de l’établissement, des salariés entre autres",
+      icon: Building2,
     },
   ],
   images: [
     {
-      src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-2-16x9.png",
+      src: "dat.png",
       srcDark: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-2-16x9-dark.png",
       alt: "Product preview",
       label: "Overview",
     },
     {
-      src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-3-16x9.png",
+      src: "incident.png",
       srcDark: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-3-16x9-dark.png",
       alt: "Product detail",
       label: "Workflow",
     },
     {
-      src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-4-16x9.png",
+      src: "est.png",
       srcDark: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-4-16x9-dark.png",
       alt: "Product context",
       label: "Insights",

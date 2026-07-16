@@ -10,7 +10,6 @@ export default function Page() {
     <div className="">
      <Navbar5 />
      <Hero206 />
-     <Feature43 />
      <Hero45 />
      <BookADemo1 />
      <Footer7 />

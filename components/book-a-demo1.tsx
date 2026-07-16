@@ -17,18 +17,13 @@ const FormGroup = ({ children }: { children: React.ReactNode }) => {
 interface BookADemo1Props {
   badge?: string;
   heading?: string;
-  benefits?: string[];
-  companies?: string[];
   className?: string;
 }
 
 const BookADemo1 = ({
   badge = "DEMANDE DE DEMO",
   heading = "Prêt à transformer votre gestion des risques professionnels ?",
-  benefits = [
-    "Rejoignez les équipes RH et cabinets de conseil qui font confiance à Satelite.",
-    "Sans engagement. Réponse sous 24h.",
-  ],
+ 
  
   className,
 }: BookADemo1Props) => {
@@ -41,24 +36,6 @@ const BookADemo1 = ({
             <h3 className="mt-2 max-w-md text-center text-3xl font-medium text-white lg:mt-0 lg:max-w-xl lg:text-left lg:text-5xl">
               {heading}
             </h3>
-            <ul className="flex flex-col">
-              {benefits.map((benefit, index) => {
-                return (
-                  <li
-                    key={`bookademo1-benefit-${index}`}
-                    className="flex max-w-md items-start gap-2 px-4 last:hidden last:border-b-0 lg:border-b lg:py-6 last:lg:flex"
-                  >
-                    <ArrowRight
-                      className="hidden size-6 shrink-0 text-[#e1b129] lg:block"
-                      strokeWidth={1}
-                    />
-                    <p className="text-center font-medium text-[#a7bbd2] lg:text-left">
-                      {benefit}
-                    </p>
-                  </li>
-                );
-              })}
-            </ul>
           </div>
           <Card className="w-full max-w-xl place-self-center bg-[#fbfbfb] px-4 pt-10 pb-4 lg:max-w-none lg:place-self-start">
             <form className="flex flex-col gap-10">
