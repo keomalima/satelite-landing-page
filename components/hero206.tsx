@@ -43,11 +43,6 @@ const Hero206 = (props: Props) => {
           <p className="mx-auto mt-6 max-w-3xl text-balance text-[#a7bbd2] lg:text-xl">
             {description}
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button className="bg-[#e1b129] font-bold text-[#293647] hover:bg-[#d29c20]">
-              Demander une démo
-            </Button>
-          </div>
         </header>
       </div>
     </section>
