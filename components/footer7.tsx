@@ -36,7 +36,7 @@ type Props = Partial<Footer7Props>;
 const defaultProps: Footer7Props = {
   logo: {
     url: "#",
-    src: "/logo_white_background.svg",
+    src: "/logo_without_baseline_blue_background.svg",
     alt: "Logo Satelite",
     title: "Satelite",
   },
@@ -92,7 +92,7 @@ const Footer7 = (props: Props) => {
                   src={logo?.src}
                   alt={logo?.alt}
                   title={logo?.title}
-                  className="h-8 w-auto"
+                  className="h-20 w-auto"
                 />
               </a>
             </div>

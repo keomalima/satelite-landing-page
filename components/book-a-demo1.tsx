@@ -1,22 +1,12 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
-
+import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
 
@@ -39,16 +29,7 @@ const BookADemo1 = ({
     "Rejoignez les équipes RH et cabinets de conseil qui font confiance à Satelite.",
     "Sans engagement. Réponse sous 24h.",
   ],
-  companies = [
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-1.svg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-4.svg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-5.svg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-6.svg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-7.svg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-8.svg",
-  ],
+ 
   className,
 }: BookADemo1Props) => {
   return (
@@ -115,32 +96,9 @@ const BookADemo1 = ({
                   className="bg-background"
                 />
               </FormGroup>
-              <FormGroup>
-                <Label>Vos besoins</Label>
-                <Textarea
-                  placeholder="Precisez votre contexte (DAT, ticketing, suivi des incidents...)"
-                  className="bg-background"
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label>Comment nous avez-vous connu ?</Label>
-                <Select>
-                  <SelectTrigger className="w-full bg-background">
-                    <SelectValue placeholder="Recommendation, recherche web, etc." />
-                  </SelectTrigger>
-                  <SelectContent className="w-full">
-                    <SelectItem value="search">Recherche web</SelectItem>
-                    <SelectItem value="referral">Recommandation</SelectItem>
-                    <SelectItem value="event">Evenement professionnel</SelectItem>
-                    <SelectItem value="partner">Partenaire</SelectItem>
-                    <SelectItem value="other">Autre</SelectItem>
-                  </SelectContent>
-                </Select>
-              </FormGroup>
               <Button type="submit" className="w-fit place-self-end bg-[#e1b129] font-bold text-[#293647] hover:bg-[#d29c20]">
-                Demander une démo gratuite
+                Demander une démo
               </Button>
-              <p className="-mt-6 text-right text-xs text-[#a7bbd2]">Sans engagement. Réponse sous 24h.</p>
             </form>
           </Card>
         </div>

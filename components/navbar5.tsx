@@ -74,13 +74,10 @@ const Navbar5 = ({ className }: Navbar5Props) => {
             className="flex items-center gap-2"
           >
             <img
-              src="/logo_white_background.svg"
-              className="h-8 w-auto"
+              src="/logo_without_baseline_blue_background.svg"
+              className="h-25 w-auto"
               alt="Logo Satelite"
             />
-            <span className="text-lg font-bold tracking-tighter text-white [font-family:Montserrat,sans-serif]">
-              Satelite
-            </span>
           </a>
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
@@ -162,7 +159,7 @@ const Navbar5 = ({ className }: Navbar5Props) => {
                     className="flex items-center gap-2"
                   >
                     <img
-                      src="/logo_white_background.svg"
+                      src="logo_white_background.png"
                       className="h-8 w-auto"
                       alt="Logo Satelite"
                     />
