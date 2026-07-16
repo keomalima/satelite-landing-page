@@ -102,7 +102,7 @@ const Hero45 = (props: Props) => {
             {heading}
           </h1>
         </div>
-        <div className="relative mx-auto max-w-5xl">
+        <div className="relative mx-auto">
           <div className="relative aspect-video max-h-[500px] w-full">
             <div className="absolute inset-0 overflow-hidden rounded-xl">
               {Array.from({ length: Math.max(featureCount, 1) }, (_, i) => {
