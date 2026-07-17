@@ -83,7 +83,7 @@ const Footer7 = (props: Props) => {
 
   return (
     <section className={cn("bg-[#1e2733] py-32", className)}>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-15">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             <div className="flex items-center gap-2 lg:justify-start">

@@ -2,7 +2,7 @@
 
 import { Building2, FileText, SquareStack } from "lucide-react";
 import React, { useState } from "react";
-
+import type { ElementType } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
@@ -21,7 +21,6 @@ interface HeroFeatureSliderFeature {
 interface Image {
   src: string;
   alt: string;
-  srcDark?: string;
 }
 
 interface HeroFeatureSliderProps {
@@ -61,26 +60,22 @@ const defaultProps: Hero45Props = {
   images: [
     {
       src: "dat.png",
-      srcDark: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-2-16x9-dark.png",
-      alt: "Product preview",
+      alt: "Dat preview",
       label: "Overview",
     },
     {
       src: "incident.png",
-      srcDark: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-3-16x9-dark.png",
-      alt: "Product detail",
+      alt: "Incident detail",
       label: "Workflow",
     },
     {
       src: "est.png",
-      srcDark: "https://deifkwefumgah.cloudfront.net/shadcnblocks/image-set/modern/saas-hero/saas-hero-4-16x9-dark.png",
-      alt: "Product context",
-      label: "Insights",
+      alt: "Establishment context",
+      label: "Establishments",
     },
   ],
 };
 
-/** Horizontal feature row; three columns in default layout. */
 const MAX_FEATURES = 3;
 
 const Hero45 = (props: Props) => {
@@ -102,7 +97,7 @@ const Hero45 = (props: Props) => {
             {heading}
           </h1>
         </div>
-        <div className="relative mx-auto">
+        <div className="relative mx-auto px-2">
           <div className="relative aspect-video max-h-[500px] w-full">
             <div className="absolute inset-0 overflow-hidden rounded-xl">
               {Array.from({ length: Math.max(featureCount, 1) }, (_, i) => {
@@ -119,26 +114,11 @@ const Hero45 = (props: Props) => {
                     )}
                     aria-hidden={!isActive}
                   >
-                    {heroImage.srcDark ? (
-                      <>
-                        <img
-                          src={heroImage.src}
-                          alt={heroImage.alt}
-                          className="absolute inset-0 size-full rounded-xl border border-border object-cover object-top dark:hidden"
-                        />
-                        <img
-                          src={heroImage.srcDark}
-                          alt={heroImage.alt}
-                          className="absolute inset-0 hidden size-full rounded-xl border border-border object-cover object-top dark:block"
-                        />
-                      </>
-                    ) : (
                       <img
                         src={heroImage.src}
                         alt={heroImage.alt}
                         className="absolute inset-0 size-full rounded-xl border border-border object-cover object-top"
-                      />
-                    )}
+                      />                
                   </div>
                 );
               })}
@@ -161,7 +141,7 @@ const Hero45 = (props: Props) => {
                 />
               )}
               <div
-                className="flex grow basis-0 cursor-default flex-col rounded-md bg-background p-4 transition-colors hover:bg-muted/40"
+                className="flex grow basis-0 cursor-default flex-col items-center rounded-md bg-background p-4 transition-colors hover:bg-muted/40"
                 onMouseEnter={() => setActiveImageIndex(index)}
               >
                 <div className="mb-6 flex size-10 items-center justify-center rounded-full bg-background drop-shadow-lg">
@@ -170,7 +150,7 @@ const Hero45 = (props: Props) => {
                 <h3 className="mb-2 font-semibold tracking-tight text-foreground">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-balance text-muted-foreground">
+                <p className="text-sm text-center text-muted-foreground">
                   {feature.description}
                 </p>
               </div>

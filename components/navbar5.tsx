@@ -211,7 +211,6 @@ const Navbar5 = ({ className }: Navbar5Props) => {
                   </a>
                 </div>
                 <div className="mt-6 flex flex-col gap-4">
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10">Connexion</Button>
                   <a
                     href="#contact"
                     className={buttonVariants({

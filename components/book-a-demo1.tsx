@@ -28,8 +28,8 @@ const BookADemo1 = ({
   className,
 }: BookADemo1Props) => {
   return (
-    <section id="contact" className={cn("bg-[#293647] py-32", className)}>
-      <div className="container mx-auto">
+    <section id="contact" className={cn("bg-[#293647] md:py-32 pt-10", className)}>
+      <div className="container mx-auto ">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-4">
           <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-8">
             <Badge variant="outline" className="border-[#e1b129] text-[#e1b129]">{badge}</Badge>
