@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge"
+import React from "react"
 
 interface HeroSaasProps {
   className?: string;
@@ -10,16 +12,16 @@ interface HeroSaasProps {
   description: string;
 }
 
-interface Hero206Props extends HeroSaasProps {}
-type Props = Partial<Hero206Props>;
+interface HeroProps extends HeroSaasProps {}
+type Props = Partial<HeroProps>;
 
-const defaultProps: Hero206Props = {
+const defaultProps: HeroProps = {
   heading: "La gestion des accidents du travail, réinventée.",
   description: "Satelite centralise le suivi des incidents, les déclarations réglementaires et la collaboration entre équipes RH et consultants - en un seul outil sécurisé.",
 };
 
 
-const Hero206 = (props: Props) => {
+const Hero = (props: Props) => {
   const {  description, className } = {
     ...defaultProps,
     ...props,
@@ -32,7 +34,7 @@ const Hero206 = (props: Props) => {
     >
       <div className="relative z-10 container mx-auto py-32">
         <header className="relative mx-auto max-w-4xl text-center">
-          <p className="mx-auto mb-5 inline-flex rounded-full border border-[#e1b129]/40 bg-[#fcf9ea] px-4 py-1 text-sm font-medium text-[#293647]">
+          <p className="mx-auto mb-5 inline-flex rounded-full border border-[#e1b129] text-[#e1b129] px-4 py-1 text-sm font-medium">
             Gestion des risques professionnels
           </p>
           <h1 className="text-4xl font-semibold tracking-tight text-pretty text-white md:text-5xl lg:text-6xl">
@@ -49,5 +51,5 @@ const Hero206 = (props: Props) => {
   );
 };
 
-export { Hero206 };
+export { Hero };
 

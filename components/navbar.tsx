@@ -27,11 +27,11 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
-interface Navbar5Props {
+interface NavbarProps {
   className?: string;
 }
 
-const Navbar5 = ({ className }: Navbar5Props) => {
+const Navbar = ({ className }: NavbarProps) => {
   const features = [
     {
       title: "Suivi des incidents",
@@ -229,4 +229,4 @@ const Navbar5 = ({ className }: Navbar5Props) => {
   );
 };
 
-export { Navbar5 };
+export { Navbar };

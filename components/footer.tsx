@@ -30,10 +30,10 @@ interface FooterBasicProps {
   className?: string;
 }
 
-interface Footer7Props extends FooterBasicProps {}
-type Props = Partial<Footer7Props>;
+interface FooterProps extends FooterBasicProps {}
+type Props = Partial<FooterProps>;
 
-const defaultProps: Footer7Props = {
+const defaultProps: FooterProps = {
   logo: {
     url: "#",
     src: "/logo_without_baseline_blue_background.svg",
@@ -67,7 +67,7 @@ const defaultProps: Footer7Props = {
   ],
 };
 
-const Footer7 = (props: Props) => {
+const Footer = (props: Props) => {
   const {
     logo,
     sections,
@@ -144,4 +144,4 @@ const Footer7 = (props: Props) => {
   );
 };
 
-export { Footer7 };
+export { Footer };

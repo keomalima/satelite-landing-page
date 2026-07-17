@@ -14,19 +14,19 @@ const FormGroup = ({ children }: { children: React.ReactNode }) => {
   return <div className="flex w-full flex-col gap-2">{children}</div>;
 };
 
-interface BookADemo1Props {
+interface BookADemoProps {
   badge?: string;
   heading?: string;
   className?: string;
 }
 
-const BookADemo1 = ({
+const BookADemo = ({
   badge = "DEMANDE DE DEMO",
   heading = "Prêt à transformer votre gestion des risques professionnels ?",
  
  
   className,
-}: BookADemo1Props) => {
+}: BookADemoProps) => {
   return (
     <section id="contact" className={cn("bg-[#293647] md:py-32 pt-10", className)}>
       <div className="container mx-auto ">
@@ -84,4 +84,4 @@ const BookADemo1 = ({
   );
 };
 
-export { BookADemo1 };
+export { BookADemo };

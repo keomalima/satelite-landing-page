@@ -30,10 +30,10 @@ interface FeatureIconListProps {
   className?: string;
 }
 
-interface Feature43Props extends FeatureIconListProps {}
-type Props = Partial<Feature43Props>;
+interface FeaturesProps extends FeatureIconListProps {}
+type Props = Partial<FeaturesProps>;
 
-const defaultProps: Feature43Props = {
+const defaultProps: FeaturesProps = {
   heading: "Tout ce dont vos équipes ont besoin",
   features: [
     {
@@ -59,7 +59,7 @@ const defaultProps: Feature43Props = {
 
 const MAX_FEATURES = 4;
 
-const Feature43 = (props: Props) => {
+const Features = (props: Props) => {
   const { heading, features, className } = {
     ...defaultProps,
     ...props,
@@ -98,4 +98,6 @@ const Feature43 = (props: Props) => {
   );
 };
 
-export { Feature43 };
+export { Features };
+
+

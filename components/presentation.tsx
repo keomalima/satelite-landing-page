@@ -78,7 +78,7 @@ const defaultProps: Hero45Props = {
 
 const MAX_FEATURES = 3;
 
-const Hero45 = (props: Props) => {
+const Presentation = (props: Props) => {
   const { badge, heading, features, images, className } = {
     ...defaultProps,
     ...props,
@@ -162,4 +162,4 @@ const Hero45 = (props: Props) => {
   );
 };
 
-export { Hero45 };
+export { Presentation };
