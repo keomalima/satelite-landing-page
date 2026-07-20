@@ -1,32 +1,11 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge"
-import React from "react"
 
-interface HeroSaasProps {
+type Props = {
   className?: string;
-  heading: string;
-  description: string;
 }
 
-interface HeroProps extends HeroSaasProps {}
-type Props = Partial<HeroProps>;
-
-const defaultProps: HeroProps = {
-  heading: "La gestion des accidents du travail, réinventée.",
-  description: "Satelite centralise le suivi des incidents, les déclarations réglementaires et la collaboration entre équipes RH et consultants - en un seul outil sécurisé.",
-};
-
-
-const Hero = (props: Props) => {
-  const {  description, className } = {
-    ...defaultProps,
-    ...props,
-  };
-
+const Hero = ({className}: Props) => {
+  
   return (
     <section
       id="about"
@@ -43,7 +22,7 @@ const Hero = (props: Props) => {
             <span className="text-[#e1b129]">réinventée.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-balance text-[#a7bbd2] lg:text-xl">
-            {description}
+            Satelite centralise le suivi des incidents, les déclarations réglementaires et la collaboration entre équipes RH et consultants - en un seul outil sécurisé.
           </p>
         </header>
       </div>

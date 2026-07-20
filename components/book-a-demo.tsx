@@ -23,8 +23,6 @@ interface BookADemoProps {
 const BookADemo = ({
   badge = "DEMANDE DE DEMO",
   heading = "Prêt à transformer votre gestion des risques professionnels ?",
- 
- 
   className,
 }: BookADemoProps) => {
   return (
