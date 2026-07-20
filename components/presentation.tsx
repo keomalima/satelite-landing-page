@@ -5,107 +5,84 @@ import React, { useState } from "react";
 import type { ElementType } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-
 import { cn } from "@/lib/utils";
 
-type HeroFeatureSliderImage = Image & {
-  label?: string;
-};
-interface HeroFeatureSliderFeature {
+interface PresentationSlider {
   title: string;
   description: string;
   icon: ElementType<{ className?: string }>;
   color?: string;
   href?: string;
-}
-interface Image {
   src: string;
   alt: string;
+  label?: string;
 }
 
-interface HeroFeatureSliderProps {
-  badge?: string;
-  heading: string;
-  features?: HeroFeatureSliderFeature[];
-  images: [HeroFeatureSliderImage, ...HeroFeatureSliderImage[]];
+type Props = {
+  features?: PresentationSlider[];
   className?: string;
 }
 
-interface Hero45Props extends HeroFeatureSliderProps {}
-type Props = Partial<Hero45Props>;
 
-const defaultProps: Hero45Props = {
-  badge: "Fonctionnalités",
-  heading: "Tout ce dont vos équipes ont besoin.",
+const defaultProps: Props = {
   features: [
     {
       title: "DAT digitale & conforme",
       description:
         "Générez vos Déclarations d'Accident du Travail en conformité CARSAT/URSSAF.",
       icon: FileText,
+      src: "dat.png",
+      alt: "Dat preview",
+      label: "Overview",
     },
     {
       title: "Suivi des incidents en temps reel",
       description:
         "Centralisez chaque accident du travail et maladie professionnelle avec un historique complet.",
       icon: SquareStack,
+      src: "incident.png",
+      alt: "Incident detail",
+      label: "Workflow",
     },
     {
       title: "Espace établissement unifié",
       description:
         "Centralisez en un seul endroit les informations de l’établissement, des salariés entre autres",
       icon: Building2,
-    },
-  ],
-  images: [
-    {
-      src: "dat.png",
-      alt: "Dat preview",
-      label: "Overview",
-    },
-    {
-      src: "incident.png",
-      alt: "Incident detail",
-      label: "Workflow",
-    },
-    {
-      src: "est.png",
+       src: "est.png",
       alt: "Establishment context",
       label: "Establishments",
     },
   ],
 };
 
-const MAX_FEATURES = 3;
 
 const Presentation = (props: Props) => {
-  const { badge, heading, features, images, className } = {
+  const { features,  className } = {
     ...defaultProps,
     ...props,
   };
 
-  const visibleFeatures = (features ?? []).slice(0, MAX_FEATURES);
-  const featureCount = visibleFeatures.length;
+  const visibleFeatures = (features ?? []);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   return (
     <section className={cn("py-32", className)}>
       <div className="container mx-auto overflow-hidden">
         <div className="mb-20 flex flex-col items-center gap-6 text-center">
-          <Badge variant="outline">{badge}</Badge>
+          <Badge variant="outline">Fonctionnalités</Badge>
           <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-pretty lg:text-5xl">
-            {heading}
+            Tout ce dont vos équipes ont besoin.
           </h1>
         </div>
         <div className="relative mx-auto px-2">
           <div className="relative aspect-video max-h-[500px] w-full">
             <div className="absolute inset-0 overflow-hidden rounded-xl">
-              {Array.from({ length: Math.max(featureCount, 1) }, (_, i) => {
-                const heroImage = images[Math.min(i, images.length - 1)];
-                const isActive = activeImageIndex === i;
+              {visibleFeatures.map((feature, i) => {
+                 const isActive = activeImageIndex === i;
                 return (
-                  <div
-                    key={`${heroImage.src}-${i}`}
+                   <div
+                    key={`${feature.src}-${i}`}
                     className={cn(
                       "absolute inset-0 transition-opacity duration-500 ease-out",
                       isActive
@@ -115,13 +92,15 @@ const Presentation = (props: Props) => {
                     aria-hidden={!isActive}
                   >
                       <img
-                        src={heroImage.src}
-                        alt={heroImage.alt}
+                        src={feature.src}
+                        alt={feature.alt}
                         className="absolute inset-0 size-full rounded-xl border border-border object-cover object-top"
                       />                
                   </div>
-                );
-              })}
+                )
+              }
+              )
+            }
             </div>
             <div className="pointer-events-none absolute inset-0 z-20 rounded-xl bg-linear-to-t from-background via-transparent to-transparent" />
             <div className="pointer-events-none absolute -top-28 -right-28 -z-10 aspect-video h-72 w-96 mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_20%,transparent_100%)] bg-size-[12px_12px] opacity-40 sm:bg-[radial-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)]" />

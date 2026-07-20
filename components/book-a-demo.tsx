@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,35 +13,32 @@ const FormGroup = ({ children }: { children: React.ReactNode }) => {
   return <div className="flex w-full flex-col gap-2">{children}</div>;
 };
 
-interface BookADemoProps {
-  badge?: string;
-  heading?: string;
+interface Props {
   className?: string;
 }
 
 const BookADemo = ({
-  badge = "DEMANDE DE DEMO",
-  heading = "Prêt à transformer votre gestion des risques professionnels ?",
   className,
-}: BookADemoProps) => {
+}: Props) => {
   return (
     <section id="contact" className={cn("bg-[#293647] md:py-32 pt-10", className)}>
       <div className="container mx-auto ">
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-4">
-          <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-8">
-            <Badge variant="outline" className="border-[#e1b129] text-[#e1b129]">{badge}</Badge>
-            <h3 className="mt-2 max-w-md text-center text-3xl font-medium text-white lg:mt-0 lg:max-w-xl lg:text-left lg:text-5xl">
-              {heading}
+        <div className="grid grid-cols-1 gap-14 ">
+          <div className="flex flex-col items-center gap-4">
+            <Badge variant="outline" className="border-[#e1b129] text-[#e1b129]">DEMANDE DE DEMO</Badge>
+            <h3 className="mt-2 max-w-md text-center text-3xl font-semibold text-white lg:mt-0 lg:max-w-3xl lg:text-5xl">
+              Prêt à transformer votre gestion des risques professionnels ?
             </h3>
           </div>
-          <Card className="w-full max-w-xl place-self-center bg-[#fbfbfb] px-4 pt-10 pb-4 lg:max-w-none lg:place-self-start">
+          <Card className="w-full max-w-xl place-self-center bg-[#fbfbfb] px-4 pt-10 pb-4  lg:max-w-3xl">
             <form className="flex flex-col gap-10">
               <div className="flex w-full items-center gap-4">
                 <FormGroup>
-                  <Label>Prenom</Label>
+                  <Label>Prénom</Label>
                   <Input
                     type="text"
                     placeholder="Alex"
+                    
                     className="bg-background"
                   />
                 </FormGroup>
