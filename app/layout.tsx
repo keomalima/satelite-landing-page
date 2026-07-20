@@ -1,8 +1,8 @@
-import { Geist, Geist_Mono, Montserrat } from "next/font/google"
+import { Geist_Mono, Montserrat } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import Page from "./page";
 
 const montserrat = Montserrat({subsets:['latin'],variable:'--font-sans'})
 
@@ -23,7 +23,7 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", montserrat.variable, "scroll-smooth")}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <Page />
       </body>
     </html>
   )

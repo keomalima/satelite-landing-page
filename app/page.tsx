@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <div className="">
      <Navbar />
-     <Hero className="hero" />
+     <Hero />
      <Presentation />
      <BookADemo />
      <Footer />
