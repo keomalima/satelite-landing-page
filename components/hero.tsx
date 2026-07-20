@@ -1,18 +1,27 @@
+"use client";
 import { cn } from "@/lib/utils";
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap";
+
+import { CustomEase } from "gsap/CustomEase"
 
 type Props = {
   className?: string;
 }
 
+const easing =  CustomEase.create("custom", "M0,0 C0.126,0.382 0.284,0.996 0.498,1.082 0.815,1.208 0.684,0.875 1,1 ")
+
 const Hero = ({className}: Props) => {
-  
+  useGSAP(()=>{
+    gsap.fromTo(".header > *", {y: 100, opacity: 0}, {y: 0, opacity: 1, duration: .8, ease: easing, stagger: 0.06})
+  })
   return (
     <section
       id="about"
       className={cn("relative overflow-hidden bg-[#293647]", className)}
     >
       <div className="relative z-10 container mx-auto py-32">
-        <header className="relative mx-auto max-w-4xl text-center">
+        <header className="relative mx-auto max-w-4xl text-center header">
           <p className="mx-auto mb-5 inline-flex rounded-full border border-[#e1b129] text-[#e1b129] px-4 py-1 text-sm font-medium">
             Gestion des risques professionnels
           </p>

@@ -67,7 +67,7 @@ const Presentation = (props: Props) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   return (
-    <section className={cn("py-32", className)}>
+    <section id={"presentation"} className={cn("py-32", className)}>
       <div className="container mx-auto overflow-hidden">
         <div className="mb-20 flex flex-col items-center gap-6 text-center">
           <Badge variant="outline">Fonctionnalités</Badge>

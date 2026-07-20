@@ -8,44 +8,19 @@ interface FooterSection {
   title: string;
   links: FooterLink[];
 }
-interface FooterSocialLink {
-  icon: React.ReactNode;
-  href: string;
-  label: string;
-}
-interface FooterLogo {
-  url: string;
-  src: string;
-  alt: string;
-  title: string;
-}
 
-interface FooterBasicProps {
-  logo?: FooterLogo;
-  description?: string;
+type Props = {
   sections?: FooterSection[];
-  socialLinks?: FooterSocialLink[];
-  copyright?: string;
   legalLinks?: FooterLink[];
   className?: string;
-}
+};
 
-interface FooterProps extends FooterBasicProps {}
-type Props = Partial<FooterProps>;
-
-const defaultProps: FooterProps = {
-  logo: {
-    url: "#",
-    src: "/logo_without_baseline_blue_background.svg",
-    alt: "Logo Satelite",
-    title: "Satelite",
-  },
-  description: "La plateforme de reference pour la gestion des accidents du travail.",
+const defaultProps: Props = {
   sections: [
     {
       title: "Plateforme",
       links: [
-        { name: "Fonctionnalités", href: "#features" },
+        { name: "Fonctionnalités", href: "#presentation" },
         { name: "À propos", href: "#about" },
         { name: "Demander une démo", href: "#contact" },
       ],
@@ -59,8 +34,6 @@ const defaultProps: FooterProps = {
       ],
     },
   ],
-  socialLinks: [],
-  copyright: "© 2026 Satelite. Tous droits réservés.",
   legalLinks: [
     { name: "Mentions légales", href: "#" },
     { name: "Politique de confidentialité", href: "#" },
@@ -69,11 +42,7 @@ const defaultProps: FooterProps = {
 
 const Footer = (props: Props) => {
   const {
-    logo,
     sections,
-    description,
-    socialLinks,
-    copyright,
     legalLinks,
     className,
   } = {
@@ -87,27 +56,18 @@ const Footer = (props: Props) => {
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             <div className="flex items-center gap-2 lg:justify-start">
-              <a href={logo?.url}>
+              <a href="#">
                 <img
-                  src={logo?.src}
-                  alt={logo?.alt}
-                  title={logo?.title}
+                  src="/logo_without_baseline_blue_background.svg"
+                  alt="Logo Satelite"
+                  title="Satelite"
                   className="h-20 w-auto"
                 />
               </a>
             </div>
             <p className="max-w-[70%] text-sm text-[#7897b8]">
-              {description}
+              La plateforme de reference pour la gestion des accidents du travail.
             </p>
-            <ul className="flex items-center space-x-6 text-[#a7bbd2]">
-              {socialLinks?.map((social, idx) => (
-                <li key={idx} className="font-medium hover:text-white">
-                  <a href={social.href} aria-label={social.label}>
-                    {social.icon}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
             {sections?.slice(0, 3).map((section, sectionIdx) => (
@@ -130,7 +90,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <div className="mt-8 flex flex-col justify-between gap-4 border-t border-white/10 py-8 text-xs font-medium text-[#577aa0] md:flex-row md:items-center md:text-left">
-          <p className="order-2 text-sm lg:order-1">{copyright}</p>
+          <p className="order-2 text-sm lg:order-1">© 2026 Satelite. Tous droits réservés.</p>
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks?.map((link, idx) => (
               <li key={idx} className="hover:text-white">
