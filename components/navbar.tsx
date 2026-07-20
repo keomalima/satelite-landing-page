@@ -25,10 +25,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { useGSAP } from "@gsap/react"
-import { CustomEase } from "gsap/CustomEase"
-
-import gsap from "gsap"
 
 interface NavbarProps {
   className?: string;
@@ -68,11 +64,6 @@ const Navbar = ({ className }: NavbarProps) => {
     },
   ];
 
-  const easing =  CustomEase.create("custom", "M0,0 C0.126,0.382 0.284,0.996 0.498,1.082 0.815,1.208 0.684,0.875 1,1 ")
-
-  useGSAP(()=>{
-    gsap.fromTo(".links > *", {y: 100, opacity: 0}, {y: 0, opacity: 1, delay: 0.3 , duration: .8, ease: easing, stagger: 0.06})
-  })
   return (
     <section className={cn("bg-[#293647] py-4", className)}>
       <div className="container mx-auto">
@@ -141,7 +132,7 @@ const Navbar = ({ className }: NavbarProps) => {
                   href="#contact"
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "hidden bg-transparent text-white hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white",
+                    "hidden bg-transparent text-white hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white ",
                   )}
                 >
                   Contact
