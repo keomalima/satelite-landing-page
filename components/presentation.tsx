@@ -6,6 +6,9 @@ import type { ElementType } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
+import { CustomEase } from "gsap/CustomEase"
 
 interface PresentationSlider {
   title: string;
@@ -56,6 +59,7 @@ const defaultProps: Props = {
   ],
 };
 
+const easing =  CustomEase.create("custom", "M0,0 C0.126,0.382 0.284,0.996 0.498,1.082 0.815,1.208 0.684,0.875 1,1")
 
 const Presentation = (props: Props) => {
   const { features,  className } = {
@@ -66,12 +70,15 @@ const Presentation = (props: Props) => {
   const visibleFeatures = (features ?? []);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  useGSAP(()=>{
+    gsap.fromTo("#presentation .container > *", {y : 25, opacity: 0}, { y: 0, opacity: 1, duration: .8, ease: easing, stagger: 0.2})
+  })
   return (
-    <section id={"presentation"} className={cn("py-32", className)}>
+    <section id={"presentation"} className={cn("py-16 md:py-32", className)}>
       <div className="container mx-auto overflow-hidden">
-        <div className="mb-20 flex flex-col items-center gap-6 text-center">
+        <div className="mb-10 md:mb-20 flex flex-col items-center gap-4 md:gap-6 text-center">
           <Badge variant="outline">Fonctionnalités</Badge>
-          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-pretty lg:text-5xl">
+          <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-pretty md:text-4xl lg:text-5xl">
             Tout ce dont vos équipes ont besoin.
           </h1>
         </div>
