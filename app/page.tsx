@@ -7,6 +7,7 @@ import { Compliance1 } from "@/components/compliance1"
 import { Stats } from "@/components/stats"
 import { Support } from "@/components/support"
 import { Analytics } from "@/components/analytics"
+import { Simulator } from "@/components/simulator"
 
 export default function Page() {
   return (
@@ -16,9 +17,10 @@ export default function Page() {
      <Presentation />
      <Analytics />
      <Stats />
+     <Simulator />
      <Compliance1 />
-     <BookADemo />
      <Support />
+     <BookADemo />
      <Footer />
     </div>
   )
